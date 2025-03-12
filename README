@@ -1,0 +1,58 @@
+# BERTopic with spaCy
+
+## Overview
+This project demonstrates how to extract text from PDFs, clean it using spaCy, and perform topic modeling using BERTopic. The workflow includes:
+
+1. Extracting text from PDFs using `PyMuPDF (fitz)`.
+2. Cleaning the text using `spaCy`, with support for English, Dutch, and French.
+3. Detecting the language of extracted text using `langdetect`.
+4. Performing topic modeling with BERTopic.
+5. Visualizing topic distributions and key term representations.
+
+## Requirements
+Ensure you have the following dependencies installed:
+```bash
+pip install pandas numpy spacy bertopic langid tqdm wordsegment matplotlib seaborn langdetect fitz scikit-learn sentence-transformers pyLDAvis
+```
+Additionally, download the necessary `spaCy` language models:
+```bash
+python -m spacy download en_core_web_lg
+python -m spacy download nl_core_news_lg
+python -m spacy download fr_core_news_lg
+```
+
+## Configuration
+Modify `config.json` to set the required paths:
+```json
+{
+    "pdf_directory": "papers",
+    "cleaned_csv": "csv/cleanedpdfsV2.csv",
+    "test_csv": "../test/pdfs/test.csv",
+    "test_pdf_directory": "../test/pdfs"
+}
+```
+
+## Running the Notebook
+1. Place PDFs in the specified directory.
+2. Run the notebook cells to extract, clean, and process text.
+3. Review the generated CSV files for cleaned text.
+4. Execute BERTopic modeling to analyze extracted topics.
+5. Use the visualization tools to explore topic insights.
+
+## Key Features
+- **Advanced Text Preprocessing:** Cleans ligatures, removes unwanted references, and detects language.
+- **Automated Processing:** Reads multiple PDFs and exports structured data.
+- **Topic Modeling with BERTopic:** Extracts key themes and visualizes topic distributions.
+- **Flexible Language Support:** Handles multilingual texts with `spaCy` and `langdetect`.
+
+## Output Files
+- `cleaned_text.csv`: Extracted and processed text with language labels.
+- `bertopic_model`: Serialized BERTopic model for further analysis.
+
+## Future Improvements
+- Implement Named Entity Recognition (NER) for additional insights.
+- Enhance language detection accuracy by combining multiple approaches.
+- Optimize processing speed for large PDF datasets.
+
+## License
+This project is open-source and available for modification and improvement.
