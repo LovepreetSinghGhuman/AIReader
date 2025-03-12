@@ -1,0 +1,12 @@
+{
+    "pdf_directory": "../papers",
+    "test_pdf_directory": "../test/pdfs",
+
+    "cleaned_csv": "../csv/cleanedpdfsV4.csv",
+    "test_cleaned_csv": "../test/csv/test4.csv",
+
+    "topics_csv": "../csv/csv_withh_topics.csv",
+    "test_topics_csv": "../test/csv/test_with_topics.csv",
+
+    "pdf_visual_path": "../visuals/pdf_visuals.pdf"
+}
